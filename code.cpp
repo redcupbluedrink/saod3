@@ -45,6 +45,36 @@ void bubbleSort(int array[], int size) {
   }
 }
 
+void shakerSort(int array[], int size) {
+    int leftpos = 1;
+    int rightpos = -1;
+    while (leftpos <= rightpos) {
+        for (int i = rightpos; i > leftpos; i--) {
+            flag1++;
+            if(array[i-1] > array[i]){
+                int temp = array[i];
+                array[i] = array[i - 1];
+                array[i - 1] = temp;
+                flag2 = flag2 + 3;
+            }
+            leftpos++;
+        }
+    }
+
+        for (int i = leftpos; i < rightpos; i++) { 
+            flag1++;
+            if(array[i-1] > array[i]){
+                int temp = array[i];
+                array[i] = array[i - 1];
+                array[i - 1] = temp;
+                flag2 = flag2 + 3;
+                
+            }  
+            leftpos--;
+        }
+    }
+
+
 int main(){
 	int N = 100;
 	int arr[N];
@@ -58,8 +88,9 @@ int main(){
 	int arrrrrr[Y];
 	FillDec(arr,N);
 	bubbleSort(arr, N);
-	cout<<"n"<<"           "<<"M+C - theor. "<<"                 "<<"M+C - fact.";
-	cout<<"\n"<<"                                "<<"ybiv.     random.     vozr.       ";
+	cout<<"n"<<"           "<<"M+C - theor. "<<"                 "<<"M+C bubble.                       M+C shaker.";
+	cout<<"\n"<<"                                "<<"ybiv.     random.     vozr.       ybiv.     random.     vozr.";
+
 	cout<<"\n"<<"100"<<"         "<<(((100*100)-100)/2)+3*(100-1)<<"                "<<flag2+flag1;
 	clearglobals();
 	FillRand(arr,N);
@@ -69,6 +100,18 @@ int main(){
 	FillInc(arr,N);
 	bubbleSort(arr,N);
 	cout<<"     "<<flag1+ flag2;
+	    clearglobals();
+	    FillDec(arr,N);
+	    shakerSort(arr,N);
+	    cout<<"          "<<flag1+ flag2;
+	    clearglobals();
+	    FillRand(arr,N);
+	    shakerSort(arr,N);
+	    cout<<"          "<<flag1+ flag2;
+	    clearglobals();
+	    FillInc(arr,N);
+	    shakerSort(arr,N);
+	    cout<<"          "<<flag1+ flag2;
 	clearglobals();
 	FillDec(arrr, M);
 	bubbleSort(arrr,M);
@@ -81,6 +124,18 @@ int main(){
 	FillInc(arrr,M);
 	bubbleSort(arrr,M);
 	cout<<"     "<<flag1+flag2;
+	    clearglobals();
+	    FillDec(arrr,M);
+	    shakerSort(arrr,M);
+	    cout<<"          "<<flag1+ flag2;
+	    clearglobals();
+	    FillRand(arrr,M);
+	    shakerSort(arrr,M);
+	    cout<<"          "<<flag1+ flag2;
+	    clearglobals();
+	    FillInc(arrr,M);
+	    shakerSort(arrr,M);
+	    cout<<"          "<<flag1+ flag2;
 	clearglobals();
 	FillDec(arrrr, C);
 	bubbleSort(arrrr,C);
@@ -93,6 +148,18 @@ int main(){
 	FillInc(arrrr, C);
 	bubbleSort(arrrr,C);
 	cout<<"    "<<flag1+flag2;
+	    clearglobals();
+	    FillDec(arrrr,C);
+	    shakerSort(arrrr,C);
+	    cout<<"          "<<flag1+ flag2;
+	    clearglobals();
+	    FillRand(arrrr,C);
+	    shakerSort(arrrr,C);
+	    cout<<"          "<<flag1+ flag2;
+	    clearglobals();
+	    FillInc(arrrr,C);
+	    shakerSort(arrrr,C);
+	    cout<<"          "<<flag1+ flag2;
 	clearglobals();
 	FillDec(arrrrr,P);
 	bubbleSort(arrrrr,P);
@@ -105,6 +172,18 @@ int main(){
 	FillInc(arrrrr,P);
 	bubbleSort(arrrrr,P);
 	cout<<"    "<<flag1+flag2;
+	    clearglobals();
+	    FillDec(arrrrr,P);
+	    shakerSort(arrrrr,P);
+	    cout<<"          "<<flag1+ flag2;
+	    clearglobals();
+	    FillRand(arrrrr,P);
+	    shakerSort(arrrrr,P);
+	    cout<<"          "<<flag1+ flag2;
+	    clearglobals();
+	    FillInc(arrrrr,P);
+	    shakerSort(arrrrr,P);
+	    cout<<"          "<<flag1+ flag2;
 	clearglobals();
 	FillDec(arrrrrr,Y);
 	bubbleSort(arrrrrr,Y);
@@ -117,4 +196,15 @@ int main(){
 	FillInc(arrrrrr,Y);
 	bubbleSort(arrrrrr,Y);
 	cout<<"    "<<flag1+flag2;
-}
+	    clearglobals();
+	    FillDec(arrrrrr,Y);
+	    shakerSort(arrrrrr,Y);
+	    cout<<"          "<<flag1+ flag2;
+	    clearglobals();
+	    FillRand(arrrrrr,Y);
+	    shakerSort(arrrrrr,Y);
+	    cout<<"          "<<flag1+ flag2;
+	    clearglobals();
+	    FillInc(arrrrrr,Y);
+	    shakerSort(arrrrrr,Y);
+	    cout<<"          "<<flag1+ flag2;
