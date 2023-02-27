@@ -46,7 +46,6 @@ void bubbleSort(int array[], int size) {
 }
 
 int main(){
-	setlocale( LC_ALL, "rus" );
 	int N = 100;
 	int arr[N];
 	int M = 200;
@@ -59,8 +58,8 @@ int main(){
 	int arrrrrr[Y];
 	FillDec(arr,N);
 	bubbleSort(arr, N);
-	cout<<"n"<<"           "<<"M+C-òåîð."<<"                 "<<"M+C-ôàêòè÷.";
-	cout<<"\n"<<"                                "<<"óáûâ.     ñëó÷.     âîçð.       ";
+	cout<<"n"<<"           "<<"M+C - theor. "<<"                 "<<"M+C - fact.";
+	cout<<"\n"<<"                                "<<"ybiv.     random.     vozr.       ";
 	cout<<"\n"<<"100"<<"         "<<(((100*100)-100)/2)+3*(100-1)<<"                "<<flag2+flag1;
 	clearglobals();
 	FillRand(arr,N);
