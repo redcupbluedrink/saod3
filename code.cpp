@@ -45,34 +45,37 @@ void bubbleSort(int array[], int size) {
   }
 }
 
-int shakerSort(int array[], int size) {
-    int L = 0, i, temp;
-    int R = size - 1;
-    int k = size - 1;
-    while (L < R) {
-        for (i = R; i > L; i--) {
+void shakerSort(int array[], int size) {
+    for (int i = 0; i < size / 2; i++) {
+        bool swapped = false;
+        for (int j = i; j < size - i - 1; j++) 
+        { 
             flag1++;
-            if (array[i] < array[i - 1]) {
-                temp = array[i];
-                array[i] = array[i - 1];
-                array[i - 1] = temp;
-                k = i;
+            if (array[j] > array[j+1]) {
+                int tmp = array[j];
+                array[j] = array[j+1];
+                array[j+1] = tmp;
                 flag2 += 3;
+                swapped = true;
+                
             }
         }
-    
-        L = k;
-        for (i = L; i < R; i++) {
-            flag1++;
-            if (array[i] > array[i + 1]) {
-                temp = array[i + 1];
-                array[i + 1] = array[i];
-                array[i] = temp;
-                k = i;
+
+        for (int j = size - 2 - i; j > i; j--) 
+        { 
+            if (swapped)
+            {
+                flag1++;
+            }
+            if (array[j] < array[j-1]) {
+                int tmp = array[j];
+                array[j] = array[j-1];
+                array[j-1] = tmp;
                 flag2 += 3;
+                swapped = true;
             }
         }
-        R = k;
+        if(!swapped) break;
     }
 }
 
@@ -92,8 +95,7 @@ int main(){
 	bubbleSort(arr, N);
 	cout<<"n"<<"           "<<"M+C - theor. "<<"                 "<<"M+C bubble.                       M+C shaker.";
 	cout<<"\n"<<"                                "<<"ybiv.     random.     vozr.       ybiv.     random.     vozr.";
-
-	cout<<"\n"<<"100"<<"         "<<(((100*100)-100)/2)+3*(100-1)<<"                "<<flag2+flag1;
+	cout<<"\n"<<"100"<<"         "<<((100*100)-100)/2<<"                "<<flag2+flag1;
 	clearglobals();
 	FillRand(arr,N);
 	bubbleSort(arr,N);
@@ -117,7 +119,7 @@ int main(){
 	clearglobals();
 	FillDec(arrr, M);
 	bubbleSort(arrr,M);
-	cout<<"\n"<<"200"<<"         "<<(((200*200)-200)/2)+3*(200-1)<<"               "<<flag2+flag1;
+	cout<<"\n"<<"200"<<"         "<<((200*200)-200)/2<<"               "<<flag2+flag1;
 	clearglobals();
 	FillRand(arrr,M);
 	bubbleSort(arrr,M);
@@ -141,7 +143,7 @@ int main(){
 	clearglobals();
 	FillDec(arrrr, C);
 	bubbleSort(arrrr,C);
-	cout<<"\n"<<"300"<<"         "<<(((300*300)-300)/2)+3*(300-1)<<"               "<<flag1+flag2;
+	cout<<"\n"<<"300"<<"         "<<((300*300)-300)/2<<"               "<<flag1+flag2;
 	clearglobals();
 	FillRand(arrrr, C);
 	bubbleSort(arrrr,C);
@@ -165,7 +167,7 @@ int main(){
 	clearglobals();
 	FillDec(arrrrr,P);
 	bubbleSort(arrrrr,P);
-	cout<<"\n"<<"400"<<"         "<<(((400*400)-400)/2)+3*(400-1)<<"               "<<flag1+flag2;
+	cout<<"\n"<<"400"<<"         "<<((400*400)-400)/2<<"               "<<flag1+flag2;
 	clearglobals();
 	FillRand(arrrrr,P);
 	bubbleSort(arrrrr,P);
@@ -189,7 +191,7 @@ int main(){
 	clearglobals();
 	FillDec(arrrrrr,Y);
 	bubbleSort(arrrrrr,Y);
-	cout<<"\n"<<"500"<<"         "<<(((500*500)-500)/2)+3*(500-1)<<"              "<<flag1+flag2;
+	cout<<"\n"<<"500"<<"         "<<((500*500)-500)/2<<"              "<<flag1+flag2;
 	clearglobals();
 	FillRand(arrrrrr,Y);
 	bubbleSort(arrrrrr,Y);
